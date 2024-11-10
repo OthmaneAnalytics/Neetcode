@@ -69,8 +69,18 @@ def groupAnagrams(strs):
             print(ana_list)
     return ana_list
 
-def main():
-    print(groupAnagrams (["act","pots","tops","cat","stop","hat"]))
+def topKFrequent( nums, k):
+    freq = {}
+    for item in nums:
+        if not item in freq.keys():
+            freq[item] = 1
+        else: 
+            freq[item] += 1
+    items_dict = dict(sorted(freq.items() , key = lambda item: item[1] , reverse = True))
+    return list(items_dict.keys())[:k]
 
+
+def main():
+    print(topKFrequent([1,2,2,3,3,3], 2))
 
 main()
