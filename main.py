@@ -79,8 +79,35 @@ def topKFrequent( nums, k):
     items_dict = dict(sorted(freq.items() , key = lambda item: item[1] , reverse = True))
     return list(items_dict.keys())[:k]
 
+def productExceptSelf(nums):
+    p = 1
+    p_nums = [1]*len(nums)
+    for item in nums:
+        p *= item
+    for i in range(len(p_nums)):
+        if nums[i] != 0:
+            p_nums[i] = p/nums[i]
+    return p_nums
+
+def removeDuplicates(nums):
+    N = len(nums)
+    k = 1
+    while k<N {
+        if nums[]
+    }
+     
+def removeDuplicates(self, nums: List[int]) -> int:
+    x = [nums[0]]
+    for item in nums:
+        if x[-1] != item:
+            x.append(item)
+    for i in range(len(x)):
+        nums[i] = x[i]
+    return len(x)
+    
+
 
 def main():
-    print(topKFrequent([1,2,2,3,3,3], 2))
+    print(productExceptSelf([1,2,4,6]))
 
 main()
