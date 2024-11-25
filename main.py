@@ -114,6 +114,12 @@ def removeElement(self, nums: List[int], val: int) -> int:
         nums[i] = x[i]
     return len(x)
     
+def getConcatenation(self, nums: List[int]) -> List[int]:
+    lans = len(nums)
+    ans = 2*lans*[0]
+    for i in range(lans):
+        ans[i], ans[lans +i] = nums[i], nums[i]
+    return ans
 
 def main():
     print(productExceptSelf([1,2,4,6]))
