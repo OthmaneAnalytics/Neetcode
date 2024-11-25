@@ -105,7 +105,15 @@ def removeDuplicates(self, nums: List[int]) -> int:
         nums[i] = x[i]
     return len(x)
     
-
+def removeElement(self, nums: List[int], val: int) -> int:
+    x = []
+    for item in nums:
+        if item != val:
+            x.append(item)
+    for i in range(len(x)):
+        nums[i] = x[i]
+    return len(x)
+    
 
 def main():
     print(productExceptSelf([1,2,4,6]))
