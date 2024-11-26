@@ -89,14 +89,8 @@ def productExceptSelf(nums):
             p_nums[i] = p/nums[i]
     return p_nums
 
-def removeDuplicates(nums):
-    N = len(nums)
-    k = 1
-    while k<N {
-        if nums[]
-    }
      
-def removeDuplicates(self, nums: List[int]) -> int:
+def removeDuplicates(nums):
     x = [nums[0]]
     for item in nums:
         if x[-1] != item:
@@ -105,7 +99,7 @@ def removeDuplicates(self, nums: List[int]) -> int:
         nums[i] = x[i]
     return len(x)
     
-def removeElement(self, nums: List[int], val: int) -> int:
+def removeElement(nums, val):
     x = []
     for item in nums:
         if item != val:
@@ -114,14 +108,41 @@ def removeElement(self, nums: List[int], val: int) -> int:
         nums[i] = x[i]
     return len(x)
     
-def getConcatenation(self, nums: List[int]) -> List[int]:
+def getConcatenation(nums):
     lans = len(nums)
     ans = 2*lans*[0]
     for i in range(lans):
         ans[i], ans[lans +i] = nums[i], nums[i]
     return ans
 
+def isValid(s):
+    if len(s) == 1 and s[-1] in ['(','[','{']:
+        return False
+    x = []
+    print("x :",x)
+    dic = {'[':']','(':')','{':'}'}
+    print("dic :",dic) 
+    for i in range(len(s)-1,-1,-1):
+        print("i :",i)
+        print("s[i] :", s[i])
+        if s[i] in [']',')','}']:
+            x.append(s[-1])
+            s = s[:-1]
+            print("x[-1] :",x[-1])
+        elif dic[s[i]] == x[-1]:
+            x = x[:-1]
+            print("x :",x)
+            s = s[:-1]
+            print("s :",s)
+        else:
+            return False
+    print("len(x) :",len(x))
+    if len(x) == 0:
+        return True
+    else:
+        return False
+
 def main():
-    print(productExceptSelf([1,2,4,6]))
+    print(isValid("["))
 
 main()
