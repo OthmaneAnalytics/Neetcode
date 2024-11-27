@@ -116,31 +116,17 @@ def getConcatenation(nums):
     return ans
 
 def isValid(s):
-    if len(s) == 1 and s[-1] in ['(','[','{']:
-        return False
     x = []
-    print("x :",x)
     dic = {'[':']','(':')','{':'}'}
-    print("dic :",dic) 
     for i in range(len(s)-1,-1,-1):
-        print("i :",i)
-        print("s[i] :", s[i])
-        if s[i] in [']',')','}']:
+        if s[i] in ['[','(','{'] and (x == [] or s[-1] != dic[x[-1]]):
+            return False
+        else:
             x.append(s[-1])
             s = s[:-1]
-            print("x[-1] :",x[-1])
-        elif dic[s[i]] == x[-1]:
-            x = x[:-1]
-            print("x :",x)
-            s = s[:-1]
-            print("s :",s)
-        else:
-            return False
-    print("len(x) :",len(x))
-    if len(x) == 0:
-        return True
-    else:
-        return False
+    return True
+
+  
 
 def main():
     print(isValid("["))
