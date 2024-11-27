@@ -126,7 +126,33 @@ def isValid(s):
             s = s[:-1]
     return True
 
-  
+def push(self, val: int) -> None:
+    self.ls.append(val)
+    if  self.mini == []:
+        self.mini.append(val)
+    elif val < self.mini[-1]:
+        self.mini.append(val)
+    else:
+        self.mini.append(self.mini[-1])
+
+def pop(self) -> None:
+    self.ls.pop()
+    self.mini.pop()
+
+def top(self) -> int:
+    if self.ls == []:
+        return
+    return self.ls[-1]
+
+def getMin(self) -> int:
+    return self.mini[-1]
+
+
+
+
+
+
+
 
 def main():
     print(isValid("["))
